@@ -40,8 +40,7 @@ TODO
 ~~~~
 
     * Add STDDEV and VARIANCE to the report fields.
-    * Clicking on individual benchmarks should display performance graph over
-        time using canvas API
+    * Clicking on individual benchmarks should display performance graph over time using canvas API
     * Add ability to group and nest benchmarks.
 
 This is still rough around the edges, please fork and make better
