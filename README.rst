@@ -10,6 +10,24 @@ at a later time and have the results from the previous sessions saved.
 **NOTE** If you add more benchmarks, you should clear your reports so all the
 benchmarks are consistent.
 
+Usage::
+
+    m = mark("Testing how hard Daniellindsleyrocksdahouse")
+    m.register({
+        name: "Test house foundation",
+        setUp: function() {
+            // Do some setup
+            this.house = new House();
+        },
+        run: function() {
+            this.house.danielLindsleyRocksDaFoundation()
+        },
+        tearDown: function() {
+            // Do some tear down
+        }
+    });
+    m.run();
+    m.printResults()
 
 *Dependencies:*
 
