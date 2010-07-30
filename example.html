@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="contrib/store.js/store.js"></script>
+        <script src="mark.js"></script>
+        <script src="contrib/sets.js/sets.js"></script>
+        <style>
+            table thead tr th {border: none; text-align: left; }
+            table th {border: #999999 solid 1px; }
+            table td {border: #999999 solid 1px; }
+        </style>
+    </head>
+    <body>
+        <h2>Sets.js benchmarks</h2>
+        <script>
+            m = new mark("Sets.js Benchmarks");
+            function create_random_sets() {
+                l1 = [];
+                l2 = [];
+                for (var i = 0; i < 100000; i++) {
+                    l1.push(Math.floor(Math.random()*100));
+                    l2.push(Math.floor(Math.random()*100));
+                }
+                this.s1 = new Set(l1);
+                this.s2 = new Set(l2);
+            }
+            m.register({
+                name: "Testing the intersection operation",
+                setUp: create_random_sets,
+                run: function() {
+                    var s3 = this.s1.intersection(this.s2);
+                },
+                tearDown: function() {
+                    // Do some tear down of some kind
+                }
+            });
+
+            m.register({
+                name: "Testing the union operation",
+                setUp: create_random_sets,
+                run: function() {
+                    var s3 = this.s1.union(this.s2);
+                },
+            });
+
+            m.register({
+                name: "Testing the difference operation",
+                setUp: create_random_sets,
+                run: function() {
+                    var s3 = this.s1.difference(this.s2);
+                },
+            });
+
+            m.register({
+                name: "Testing the symmetric difference operation",
+                setUp: create_random_sets,
+                run: function() {
+                    var s3 = this.s1.symmetricDifference(this.s2);
+                },
+            });
+
+            m.register({
+                name: "Testing the isSuperSet operation",
+                setUp: create_random_sets,
+                run: function() {
+                    var s3 = this.s1.isSuperSet(this.s2);
+                },
+            });
+
+            m.register({
+                name: "Testing the isSubSet operation",
+                setUp: create_random_sets,
+                run: function() {
+                    var s3 = this.s1.isSubSet(this.s2);
+                },
+            });
+
+            m.run();
+            m.printResults()
+        </script>
+    </body>
+</html>
