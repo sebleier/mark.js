@@ -12,7 +12,7 @@ benchmarks are consistent.
 
 Usage::
 
-    m = mark("Testing how hard Daniellindsleyrocksdahouse")
+    m = new mark("Testing how hard Daniellindsleyrocksdahouse")
     m.register({
         name: "How long does it take Daniel to rock the foundation",
         setUp: function() {
