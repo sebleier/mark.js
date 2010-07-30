@@ -14,7 +14,7 @@ Usage::
 
     m = mark("Testing how hard Daniellindsleyrocksdahouse")
     m.register({
-        name: "Test house foundation",
+        name: "How long does it take Daniel to rock the foundation",
         setUp: function() {
             // Do some setup
             this.house = new House();
